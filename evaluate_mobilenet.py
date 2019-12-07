@@ -31,13 +31,13 @@ rank_images = args.rank.lower() in ("true", "yes", "t", "1")
 
 # give priority to directory
 if args.dir is not None:
-    print("Loading images from directory : ", args.dir)
+    # print("Loading images from directory : ", args.dir)
     imgs = Path(args.dir).files('*.png')
     imgs += Path(args.dir).files('*.jpg')
     imgs += Path(args.dir).files('*.jpeg')
 
 elif args.img[0] is not None:
-    print("Loading images from path(s) : ", args.img)
+    # print("Loading images from path(s) : ", args.img)
     imgs = args.img
 
 else:
@@ -68,15 +68,15 @@ with tf.device('/GPU:0'):
         file_name = Path(img_path).name.lower()
         score_list.append((file_name, mean))
 
-        print("Evaluating : ", img_path)
-        print("NIMA Score : %0.3f +- (%0.3f)" % (mean, std))
-        print()
+        # print("Evaluating : ", img_path)
+        # print("NIMA Score : %0.3f +- (%0.3f)" % (mean, std))
+        # print()
 
     if rank_images:
-        print("*" * 40, "Ranking Images", "*" * 40)
+        # print("*" * 40, "Ranking Images", "*" * 40)
         score_list = sorted(score_list, key=lambda x: x[1], reverse=True)
 
         for i, (name, score) in enumerate(score_list):
-            print("%d)" % (i + 1), "%s : Score = %0.5f" % (name, score))
+            # print("%d)" % (i + 1), "%s : Score = %0.5f" % (name, score))
 
 

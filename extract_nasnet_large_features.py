@@ -41,7 +41,7 @@ for _ in range(nb_samples // batchsize):
 
     count += batchsize
 
-    print("Finished %0.2f percentage storing dataset" % (count  * 100 / float(nb_samples)))
+    # print("Finished %0.2f percentage storing dataset" % (count  * 100 / float(nb_samples)))
 
 writer.close()
 
@@ -71,6 +71,6 @@ for _ in range(nb_samples // batchsize):
 
     count += batchsize
 
-    print("Finished %0.2f percentage storing dataset" % (count  * 100 / float(nb_samples)))
+    # print("Finished %0.2f percentage storing dataset" % (count  * 100 / float(nb_samples)))
 
 writer.close()
